@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+units = Unit.create [{name: 'pcs'}, {name: 'kg'}, {name: 'm'}]

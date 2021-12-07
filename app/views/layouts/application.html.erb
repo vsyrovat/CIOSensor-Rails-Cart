@@ -12,7 +12,17 @@
 
   <body>
     <div class="container">
-      <%= yield %>
+      <div class="row">
+        <div class="col-sm">
+          <%= link_to 'Admin', '/admin' %>
+          <%= link_to 'Customer', '/' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
 </html>
