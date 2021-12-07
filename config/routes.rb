@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     get '/', to: 'admin#index'
 
     resources :units
+    resources :goods
   end
 end

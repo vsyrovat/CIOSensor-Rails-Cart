@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 units = Unit.create [{name: 'pcs'}, {name: 'kg'}, {name: 'm'}]
+goods = Good.create [{name: 'nail'}, {name: 'rope'}, {name: 'bucket'}]
