@@ -10,12 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_07_025142) do
+ActiveRecord::Schema.define(version: 2021_12_09_023641) do
 
   create_table "goods", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "offers", force: :cascade do |t|
+    t.integer "unit_id", null: false
+    t.integer "good_id", null: false
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["good_id"], name: "index_offers_on_good_id"
+    t.index ["unit_id", "good_id"], name: "index_offers_on_unit_id_and_good_id", unique: true
+    t.index ["unit_id"], name: "index_offers_on_unit_id"
   end
 
   create_table "units", force: :cascade do |t|
@@ -25,4 +37,6 @@ ActiveRecord::Schema.define(version: 2021_12_07_025142) do
     t.index ["name"], name: "index_units_on_name", unique: true
   end
 
+  add_foreign_key "offers", "goods"
+  add_foreign_key "offers", "units"
 end

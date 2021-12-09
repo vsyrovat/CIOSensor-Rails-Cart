@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
     resources :units
     resources :goods
+    resources :offers
   end
 end

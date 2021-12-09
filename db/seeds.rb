@@ -6,5 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-units = Unit.create [{name: 'pcs'}, {name: 'kg'}, {name: 'm'}]
-goods = Good.create [{name: 'nail'}, {name: 'rope'}, {name: 'bucket'}]
+pcs, kg, m = Unit.create [{name: 'pcs'}, {name: 'kg'}, {name: 'm'}]
+nail, rope, bucket = Good.create [{name: 'nail'}, {name: 'rope'}, {name: 'bucket'}]
+
+Offer.create [
+               {good: nail, unit: pcs, price: Money.from_cents(2, 'USD')},
+               {good: nail, unit: kg, price: Money.from_cents(5_00, 'USD')},
+               {good: rope, unit: m, price: Money.from_cents(25, 'USD')},
+               {good: bucket, unit: pcs, price: Money.from_cents(10_00, 'USD')},
+             ]
