@@ -9,9 +9,18 @@
 pcs, kg, m = Unit.create [{name: 'pcs'}, {name: 'kg'}, {name: 'm'}]
 nail, rope, bucket = Good.create [{name: 'nail'}, {name: 'rope'}, {name: 'bucket'}]
 
-Offer.create [
-               {good: nail, unit: pcs, price: Money.from_cents(2, 'USD')},
-               {good: nail, unit: kg, price: Money.from_cents(5_00, 'USD')},
-               {good: rope, unit: m, price: Money.from_cents(25, 'USD')},
-               {good: bucket, unit: pcs, price: Money.from_cents(10_00, 'USD')},
-             ]
+nail_pcs, nail_kg, rope_m, bucket_pcs =
+  Offer.create [
+                 {good: nail, unit: pcs, price: Money.from_cents(2, 'USD')},
+                 {good: nail, unit: kg, price: Money.from_cents(5_00, 'USD')},
+                 {good: rope, unit: m, price: Money.from_cents(25, 'USD')},
+                 {good: bucket, unit: pcs, price: Money.from_cents(10_00, 'USD')},
+               ]
+
+cart = Cart.create
+
+CartItem.create [
+                  {cart: cart, offer: nail_kg, price: nail_kg.price, count: 0.1},
+                  {cart: cart, offer: rope_m, price: rope_m.price, count: 5},
+                  {cart: cart, offer: bucket_pcs, price: bucket_pcs.price, count: 2},
+                ]

@@ -1,1 +1,16 @@
 <div>Cart id: <%= @cart.id %></div>
+
+<table>
+  <tr>
+    <th>Good</th>
+    <th>Price</th>
+    <th>Count</th>
+  </tr>
+  <% @cart.items.each do |item_count| %>
+    <tr>
+      <td><%= item_count.offer.good.name %></td>
+      <td><%= item_count.offer.human_price %></td>
+      <td><%= item_count.human_count %></td>
+    </tr>
+  <% end %>
+</table>

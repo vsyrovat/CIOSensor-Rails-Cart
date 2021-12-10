@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_10_041610) do
+ActiveRecord::Schema.define(version: 2021_12_10_045749) do
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "cart_id", null: false
+    t.integer "offer_id", null: false
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
+    t.decimal "count", precision: 10, scale: 3
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["offer_id"], name: "index_cart_items_on_offer_id"
+  end
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -42,6 +54,8 @@ ActiveRecord::Schema.define(version: 2021_12_10_041610) do
     t.index ["name"], name: "index_units_on_name", unique: true
   end
 
+  add_foreign_key "cart_items", "carts"
+  add_foreign_key "cart_items", "offers"
   add_foreign_key "offers", "goods"
   add_foreign_key "offers", "units"
 end
