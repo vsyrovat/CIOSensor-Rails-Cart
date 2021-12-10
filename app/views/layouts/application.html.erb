@@ -14,8 +14,8 @@
     <div class="container">
       <div class="row">
         <div class="col-sm">
-          <%= link_to 'Admin', '/admin' %>
-          <%= link_to 'Customer', '/' %>
+          <%= !current_page?('/admin') ? link_to('Admin zone', '/admin') : 'Admin zone' %>
+          <%= !current_page?('/') ? link_to('Customer zone', '/') : 'Customer zone' %>
         </div>
       </div>
       <div class="row">
