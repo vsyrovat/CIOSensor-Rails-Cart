@@ -20,3 +20,15 @@ window.addEventListener('turbolinks:load', () => {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
 })
+
+
+//----
+
+$(function(){
+    $('.js-get-button').on('click', function(){
+        var context = $(this).closest('.js-context')
+        $.getJSON($(this).data('url'), function(data){
+            context.find('.js-get-result').text(JSON.stringify(data, null, 3))
+        })
+    })
+})

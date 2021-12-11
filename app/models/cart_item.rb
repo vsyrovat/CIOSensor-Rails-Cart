@@ -6,4 +6,13 @@ class CartItem < ApplicationRecord
   def human_count
     "#{count} #{offer.unit.name}"
   end
+
+  def to_api
+    {
+      good: offer.good.to_api,
+      unit: offer.unit.to_api,
+      count: count,
+      price: price
+    }
+  end
 end

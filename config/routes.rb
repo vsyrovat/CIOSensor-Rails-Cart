@@ -9,4 +9,11 @@ Rails.application.routes.draw do
     resources :goods
     resources :offers
   end
+
+  namespace :api do
+    namespace :v1 do
+      get 'catalog' => 'catalog#index'
+      get 'cart' => 'cart#index'
+    end
+  end
 end

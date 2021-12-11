@@ -14,3 +14,27 @@
     </tr>
   <% end %>
 </table>
+
+<hr>
+
+<h3>Api</h3>
+
+<h4>Get declarations</h4>
+<% url = '/api/v1/catalog' %>
+<div class="js-context">
+  <p>
+    <span>GET <%= url %></span>
+    <button class="js-get-button" data-method="GET" data-url="<%= url %>">Try it now</button>
+  </p>
+  <div class="outlined-result js-get-result"></div>
+</div>
+
+<h4>Get cart</h4>
+<% url = '/api/v1/cart' %>
+<div class="js-context">
+  <p>
+    <span>GET <%= url %></span>
+    <button class="js-get-button" data-method="GET" data-url="<%= url %>">Try it now</button>
+  </p>
+  <div class="outlined-result js-get-result"></div>
+</div>
