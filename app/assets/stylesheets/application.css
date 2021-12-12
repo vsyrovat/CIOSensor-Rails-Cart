@@ -15,10 +15,3 @@
  */
 
 @import 'bootstrap/dist/css/bootstrap.min.css';
-
-.outlined-result {
-    padding: 1em;
-    background-color: #F7F7F7;
-    white-space: pre-wrap;
-    overflow-x: auto;
-}

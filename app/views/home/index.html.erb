@@ -22,19 +22,32 @@
 <h4>Get declarations</h4>
 <% url = '/api/v1/catalog' %>
 <div class="js-context">
-  <p>
-    <span>GET <%= url %></span>
-    <button class="js-get-button" data-method="GET" data-url="<%= url %>">Try it now</button>
-  </p>
-  <div class="outlined-result js-get-result"></div>
+  <pre>GET <%= url %></pre>
+  <button class="js-get-button" data-method="GET" data-url="<%= url %>">Try it now</button>
+  <pre class="js-get-result"></pre>
 </div>
 
 <h4>Get cart</h4>
 <% url = '/api/v1/cart' %>
 <div class="js-context">
-  <p>
-    <span>GET <%= url %></span>
-    <button class="js-get-button" data-method="GET" data-url="<%= url %>">Try it now</button>
-  </p>
-  <div class="outlined-result js-get-result"></div>
+  <pre>GET <%= url %></pre>
+  <button class="js-get-button" data-method="GET" data-url="<%= url %>">Try it now</button>
+  <pre class="js-get-result"></pre>
+</div>
+
+<h4>Set items count in cart</h4>
+<% url = '/api/v1/cart/item' %>
+<div class="js-context">
+  <pre>
+PUT /api/v1/cart/item
+{
+    offer_id: %offer_id%
+    count: %count%
+}
+</pre>
+  Good id: <input type="text" size="5" name="good_id" class="js-input-good-id">
+  Unit id: <input type="text" size="5" name="unit_id" class="js-input-unit-id">
+  Count: <input type="text" size="5" name="count" class="js-input-count">
+  <button class="js-put-cart-item-button" data-method="PUT" data-url="<%= url %>">Try it now</button>
+  <pre class="js-put-result"></pre>
 </div>

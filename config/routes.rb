@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'catalog' => 'catalog#index'
       get 'cart' => 'cart#index'
+      put 'cart/item' => 'cart#put_item'
     end
   end
 end

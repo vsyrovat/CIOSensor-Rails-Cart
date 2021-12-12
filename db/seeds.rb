@@ -20,7 +20,7 @@ nail_pcs, nail_kg, rope_m, bucket_pcs =
 cart = Cart.create
 
 CartItem.create [
-                  {cart: cart, offer: nail_kg, price: nail_kg.price, count: 0.1},
-                  {cart: cart, offer: rope_m, price: rope_m.price, count: 5},
-                  {cart: cart, offer: bucket_pcs, price: bucket_pcs.price, count: 2},
+                  {cart: cart, offer: nail_kg, count: 0.1},
+                  {cart: cart, offer: rope_m, count: 5},
+                  {cart: cart, offer: bucket_pcs, count: 2},
                 ]

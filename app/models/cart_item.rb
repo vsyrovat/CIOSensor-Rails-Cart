@@ -3,6 +3,11 @@ class CartItem < ApplicationRecord
   belongs_to :offer
   monetize :price_cents
 
+  def initialize(attributes)
+    attributes[:price] = attributes[:offer].price
+    super
+  end
+
   def human_count
     "#{count} #{offer.unit.name}"
   end
