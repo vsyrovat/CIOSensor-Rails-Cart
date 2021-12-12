@@ -51,3 +51,11 @@ PUT /api/v1/cart/item
   <button class="js-put-cart-item-button" data-method="PUT" data-url="<%= url %>">Try it now</button>
   <pre class="js-put-result"></pre>
 </div>
+
+<h4>Delete items in cart</h4>
+<% url = '/api/v1/cart/items' %>
+<div class="js-context">
+  <pre>DELETE <%= url %></pre>
+  <button class="js-delete-button" data-method="DELETE" data-url="<%= url %>">Try it now</button>
+  <pre class="js-delete-result"></pre>
+</div>

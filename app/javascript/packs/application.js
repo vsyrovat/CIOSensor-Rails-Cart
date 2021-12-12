@@ -51,4 +51,15 @@ $(function(){
             }
         })
     })
+
+    $('.js-delete-button').on('click', function(){
+        var context = $(this).closest('.js-context')
+        $.ajax({
+            type: 'DELETE',
+            url: $(this).data('url'),
+            success: function(data) {
+                context.find('.js-delete-result').text(JSON.stringify(data))
+            }
+        })
+    })
 })

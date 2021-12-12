@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get 'catalog' => 'catalog#index'
       get 'cart' => 'cart#index'
       put 'cart/item' => 'cart#put_item'
+      delete 'cart/items' => 'cart#delete_cart_items'
     end
   end
 end

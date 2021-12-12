@@ -30,4 +30,9 @@ class Api::V1::CartController < ApplicationController
   rescue ActiveRecord::RecordNotFound => e
     render json: { ok: false, error: e.message }, status: 400
   end
+
+  def delete_cart_items
+    CartItem.destroy_by(cart: current_cart)
+    render json: { ok: true }, status: 200
+  end
 end
